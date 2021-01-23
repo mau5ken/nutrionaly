@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
 body{
     overflow: hidden;
+}
+
+.h1 h1{
+    font-size: 3.2rem;
+}
+
+.h2 h2{
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    box-shadow: none;
+}
+
+
+.blog_about{
+    background: url('https://res.cloudinary.com/craftwebs/image/upload/v1606647208/nu07r10y3/SVG%27S/blob_1.svg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-bg{
+    background: url('https://res.cloudinary.com/craftwebs/image/upload/v1606646788/nu07r10y3/SVG%27S/svg.png') no-repeat;
+    background-size: cover;
+    position: relative;
 }
