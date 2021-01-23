@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
+        <meta name="theme-color" content="#85d5a4" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
           name="viewport"
