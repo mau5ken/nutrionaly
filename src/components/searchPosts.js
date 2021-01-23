@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
+import {Card} from "react-bootstrap"
 
 import { rhythm } from "../utils/typography"
 
@@ -50,6 +51,7 @@ const SearchedPosts = ({ results }) =>
       const excerpt = node.excerpt
       const slug = node.slug
 
+      
       return (
         <div key={slug}>
           <h3
@@ -69,6 +71,7 @@ const SearchedPosts = ({ results }) =>
           />
         </div>
       )
+
     })
   ) : (
     <p style={{ textAlign: "center" }}>
@@ -77,29 +80,33 @@ const SearchedPosts = ({ results }) =>
   )
 
 const AllPosts = ({ posts }) => (
-  <div style={{ margin: "20px 0 40px" }}>
-    {posts.map(({ node }) => {
-      const title = node.frontmatter.title || node.fields.slug
-      return (
-        <div key={node.fields.slug}>
-          <h3
-            style={{
-              marginBottom: rhythm(1 / 4),
-            }}
-          >
-            <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
-              {title}
-            </Link>
-          </h3>
-          <small>{node.frontmatter.date}</small>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: node.frontmatter.description || node.excerpt,
-            }}
-          />
-        </div>
-      )
-    })}
+  <div>
+    <div className="row">
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug
+          return (
+            <div className="col-4" key={node.fields.slug}>
+              <Card>
+              <Card.Body>
+                <Card.Title>
+                  <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
+                    {title}
+                  </Link>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{node.frontmatter.date}</Card.Subtitle>
+                <Card.Text>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            </div>
+          )
+      })}
+    </div>
   </div>
 )
 
