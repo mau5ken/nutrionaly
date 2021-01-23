@@ -1,7 +1,7 @@
 import React from "react"
 import {Row, Col} from "react-bootstrap"
 import Fade from "react-reveal/Fade"
-import '../styles/global'
+import '../styles/global.css'
 
 export default (props) => (
 
