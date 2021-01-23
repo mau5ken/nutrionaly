@@ -2,7 +2,7 @@ import React from "react"
 import { Navbar, Nav, Container } from "react-bootstrap";
 export default (props) => (
 
-    <Navbar bg="transparent" variant="light">
+    <Navbar variant="light" style={{backgroundColor: "#F9C8B2"}}>
         <Container>
             <img
                 src="https://res.cloudinary.com/craftwebs/image/upload/v1605419794/nu07r10y3/PNG%27S/nutrionaly_logo_trans.png"
@@ -15,7 +15,7 @@ export default (props) => (
             <Nav className="mr-auto">
                 <Nav.Link href="/">Inicio</Nav.Link>
                 <Nav.Link href="/blog">Blog</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                <Nav.Link href="#pricing">Contacto</Nav.Link>
             </Nav>
         </Container>
     </Navbar>
