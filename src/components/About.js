@@ -1,20 +1,17 @@
 import React from "react"
-import {Row, Col} from "react-bootstrap"
 import Fade from "react-reveal/Fade"
 import '../styles/global.css'
 
 export default (props) => (
+    <section>
 
-    <Fade bottom>
-        <Row>
-            <Col xs={12} lg={6} className="blog_about">
-                <img src="https://res.cloudinary.com/craftwebs/image/upload/v1606649064/nu07r10y3/SVG%27S/viegies-bowl.png" alt="vegies-bowl"/>
-            </Col>
+        <Fade bottom>
+            <div className="jumbotron jumbotron-fluid" style={{backgroundColor: "#F5A47F"}}>
+                <div className="container">
+                    <h2 className="text-center">Nuestros mas recientes blogs</h2>
 
-            <Col xs={12} lg={6}>
-                <h1>¿Quiénes somos?</h1>
-                <p>Somos equipo que constantemente está enseñando al mundo sobre cuidar la salud. Nos especializamos en el ámbito de la nutrición con una amplía gama de experiencia y estudio para mejorar la vida de las personas</p>
-            </Col>
-        </Row>
-    </Fade>
+                </div>
+            </div>
+        </Fade>
+    </section>
 )
