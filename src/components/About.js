@@ -8,7 +8,7 @@ export default (props) => (
     <Fade bottom>
         <Row>
             <Col xs={12} lg={6} className="blog_about">
-                <img src="https://res.cloudinary.com/craftwebs/image/upload/v1606649064/nu07r10y3/SVG%27S/viegies-bowl.png"></img>
+                <img src="https://res.cloudinary.com/craftwebs/image/upload/v1606649064/nu07r10y3/SVG%27S/viegies-bowl.png" alt="vegies-bowl"/>
             </Col>
 
             <Col xs={12} lg={6}>
