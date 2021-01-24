@@ -37,7 +37,7 @@ module.exports = {
                 frontmatter {
                   title
                   description
-                  date(formatString: "MMMM DD, YYYY")
+                  date(formatString: "MMMM DD, YYYY", locale: "mx")
                 }
               }
             }
@@ -128,6 +128,7 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+        omitGoogleFont: false
       },
     },
   ],
