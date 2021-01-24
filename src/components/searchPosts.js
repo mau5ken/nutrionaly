@@ -3,8 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
-import {Card} from "react-bootstrap"
-
+import { Card } from "react-bootstrap"
 import { rhythm } from "../utils/typography"
 
 const SearchBar = styled.div`
@@ -74,9 +73,9 @@ const SearchedPosts = ({ results }) =>
 
     })
   ) : (
-    <p style={{ textAlign: "center" }}>
-      Sorry, couldn't find any posts matching this search.
-    </p>
+    <h5 style={{ textAlign: "center" }}>
+      <span role="img" aria-label="sad">😓</span>  No pudimos encontrar el contenido que buscas.
+    </h5>
   )
 
 const AllPosts = ({ posts }) => (
@@ -85,24 +84,26 @@ const AllPosts = ({ posts }) => (
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
           return (
-            <div className="col-4" key={node.fields.slug}>
-              <Card>
-              <Card.Body>
-                <Card.Title>
-                  <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
-                    {title}
-                  </Link>
-                </Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{node.frontmatter.date}</Card.Subtitle>
-                <Card.Text>
-                  <p
+            <div className="col-12 col-lg-4" key={node.fields.slug}>
+              <Card className="shadow bg-white rounded">
+                <Card.Body>
+                  <Card.Title>
+                    <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
+                      {title}
+                    </Link>
+                  </Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{node.frontmatter.date}</Card.Subtitle>
+                  <Card.Text 
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.description || node.excerpt,
                     }}
-                  />
-                </Card.Text>
-              </Card.Body>
-            </Card>
+                  >
+                  </Card.Text>
+                  <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
+                      Leer mas
+                  </Link>
+                </Card.Body>
+              </Card>
             </div>
           )
       })}
