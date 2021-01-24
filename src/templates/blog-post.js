@@ -75,7 +75,7 @@ class BlogPostTemplate extends React.Component {
 				}}
 				>
 					<li className="center">
-						<h5>No olvides compartirlo 🍎 ✨</h5>
+						<h5>No olvides compartirlo <span role="img" aria-label="share">🍎 ✨</span></h5>
 					</li>
 					<li>
 						
