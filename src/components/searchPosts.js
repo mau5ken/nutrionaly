@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
-import { Card } from "react-bootstrap"
+import { Card, CardColumns } from "react-bootstrap"
 import { rhythm } from "../utils/typography"
 
 const SearchBar = styled.div`
@@ -52,11 +52,9 @@ const SearchedPosts = ({ results }) =>
 
       
       return (
-        <div key={slug}>
+        <div className="container" key={slug}>
           <h3
-            style={{
-              marginBottom: rhythm(1 / 4),
-            }}
+            
           >
             <Link style={{ boxShadow: `none` }} to={`/blog${slug}`}>
               {title}
@@ -79,12 +77,12 @@ const SearchedPosts = ({ results }) =>
   )
 
 const AllPosts = ({ posts }) => (
-  <div>
-    <div className="row">
+  <div className="container">
+    <CardColumns>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
           return (
-            <div className="col-12 col-lg-4" key={node.fields.slug}>
+            <div key={node.fields.slug}>
               <Card className="shadow bg-white rounded">
                 <Card.Body>
                   <Card.Title>
@@ -107,7 +105,7 @@ const AllPosts = ({ posts }) => (
             </div>
           )
       })}
-    </div>
+      </CardColumns> 
   </div>
 )
 
@@ -123,7 +121,7 @@ const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
 
   return (
     <>
-      <SearchBar>
+      <SearchBar className="container">
         <svg
           focusable="false"
           xmlns="http://www.w3.org/2000/svg"
