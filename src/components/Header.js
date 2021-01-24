@@ -2,7 +2,7 @@ import React from "react"
 import { Navbar, Nav, Container } from "react-bootstrap";
 export default (props) => (
 
-    <Navbar variant="light" style={{backgroundColor: "#F9C8B2"}}>
+    <Navbar variant="light">
         <Container>
             <img
                 src="https://res.cloudinary.com/craftwebs/image/upload/v1605419794/nu07r10y3/PNG%27S/nutrionaly_logo_trans.png"
