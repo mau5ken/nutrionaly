@@ -15,7 +15,7 @@ export default (props) => (
             <Nav className="mr-auto">
                 <Nav.Link href="/">Inicio</Nav.Link>
                 <Nav.Link href="/blog">Blog</Nav.Link>
-                <Nav.Link href="#pricing">Contacto</Nav.Link>
+                <Nav.Link href="/contact">Contacto</Nav.Link>
             </Nav>
         </Container>
     </Navbar>
