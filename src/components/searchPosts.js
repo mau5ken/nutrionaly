@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
-
+import { Card } from "react-bootstrap"
 import { rhythm } from "../utils/typography"
 
 const SearchBar = styled.div`
@@ -50,6 +50,7 @@ const SearchedPosts = ({ results }) =>
       const excerpt = node.excerpt
       const slug = node.slug
 
+      
       return (
         <div key={slug}>
           <h3
@@ -69,37 +70,44 @@ const SearchedPosts = ({ results }) =>
           />
         </div>
       )
+
     })
   ) : (
-    <p style={{ textAlign: "center" }}>
-      Sorry, couldn't find any posts matching this search.
-    </p>
+    <h5 style={{ textAlign: "center" }}>
+      <span role="img" aria-label="sad">😓</span>  No pudimos encontrar el contenido que buscas.
+    </h5>
   )
 
 const AllPosts = ({ posts }) => (
-  <div style={{ margin: "20px 0 40px" }}>
-    {posts.map(({ node }) => {
-      const title = node.frontmatter.title || node.fields.slug
-      return (
-        <div key={node.fields.slug}>
-          <h3
-            style={{
-              marginBottom: rhythm(1 / 4),
-            }}
-          >
-            <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
-              {title}
-            </Link>
-          </h3>
-          <small>{node.frontmatter.date}</small>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: node.frontmatter.description || node.excerpt,
-            }}
-          />
-        </div>
-      )
-    })}
+  <div>
+    <div className="row">
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug
+          return (
+            <div className="col-12 col-lg-4" key={node.fields.slug}>
+              <Card className="shadow bg-white rounded">
+                <Card.Body>
+                  <Card.Title>
+                    <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
+                      {title}
+                    </Link>
+                  </Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{node.frontmatter.date}</Card.Subtitle>
+                  <Card.Text 
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  >
+                  </Card.Text>
+                  <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
+                      Leer mas
+                  </Link>
+                </Card.Body>
+              </Card>
+            </div>
+          )
+      })}
+    </div>
   </div>
 )
 

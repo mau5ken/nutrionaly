@@ -25,7 +25,7 @@ class Layout extends React.Component {
 			<main>{children}</main>
 			</div>
 			<Footer>
-			© {new Date().getFullYear()}, Built with
+			© {new Date().getFullYear()}, Nutrionaly. Todos los derechos reservados.
 			{` `}
 			</Footer>
 		</Wrapper>

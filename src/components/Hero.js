@@ -5,8 +5,7 @@ import '../styles/global.css'
 
 export default (props) => (
 
-        <div className="position-relative p-3 p-md-5 text-center hero-bg"
-        style={{backgroundColor: "#f5a47f99"}}>
+        <div className="position-relative p-3 p-md-5 text-center hero-bg">
             <Fade bottom>
                 <Row>
                     <Col xs={12} lg={5} style={{paddingTop: '8em'}}>
