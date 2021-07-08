@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { rhythm } from "../utils/typography"
 
 
 class Layout extends React.Component {
@@ -13,22 +12,22 @@ class Layout extends React.Component {
 			
 		}
 		return (
-		<Wrapper>
-			<div
-			style={{
-				marginLeft: `auto`,
-				marginRight: `auto`,
-				maxWidth: rhythm(40),
-				padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-			}}
-			>
-			<main>{children}</main>
-			</div>
-			<Footer>
+		<>
+			<Wrapper>
+				<div
+				style={{
+					marginLeft: `auto`,
+					marginRight: `auto`,
+				}}
+				>
+				<main>{children}</main>
+				</div>
+			</Wrapper>
+			<Footer className="p-3 text-white" style={{backgroundColor: "#4C8F87", margin: "0px"}}>
 			© {new Date().getFullYear()}, Nutrionaly. Todos los derechos reservados.
 			{` `}
 			</Footer>
-		</Wrapper>
+		</>
 		)
   	}
 }
